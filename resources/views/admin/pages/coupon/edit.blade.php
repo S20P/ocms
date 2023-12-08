@@ -60,8 +60,8 @@
                                     <label class="control-label" for="categories">Categories</label>
                                     <select name="category_name" id="categories" class="form-select">
                                         @foreach($categories as $category)
-                                            @php $check = ($category->name==$coupon->category_name) ? 'selected' : ''@endphp
-                                            <option value="{{ $category->name }}" {{ $check }}>{{ $category->name }}</option>
+                                            @php $check = ($category->shortcode==$coupon->category_name) ? 'selected' : ''@endphp
+                                            <option value="{{ $category->shortcode }}" {{ $check }}>{{ $category->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

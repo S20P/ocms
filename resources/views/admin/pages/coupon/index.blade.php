@@ -30,7 +30,7 @@
                             <label class="control-label" for="categories">Categories</label>
                             <select name="category_name" id="categories" class="form-select" required>
                                 @foreach($categories as $category)
-                                    <option value="{{ $category->name }}">{{ $category->name }}</option>
+                                    <option value="{{ $category->shortcode }}">{{ $category->name."-(".$category->shortcode.")" }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -60,6 +60,7 @@
                             <th scope="col"> Coupon Code </th>                                            
                             <th scope="col"> Amount </th>  
                             <th scope="col"> Status </th>  
+                            <th scope="col"> Category </th>  
                             <th scope="col" style="width:100px; min-width:100px;" class="text-center text-danger"><i class="fa fa-bolt"> </i></th>
                         </tr>
                         </thead>
@@ -68,7 +69,8 @@
                                 <tr>
                                     <td>{{ $coupon->coupon_code }}</td> 
                                     <td>{{ $coupon->amount }}</td> 
-                                    <td>{{ $coupon->status? "Claimed" : "Unclaimed" }}</td>                                                                      
+                                    <td>{{ $coupon->status? "Claimed" : "Unclaimed" }}</td>       
+                                    <td>{{ $coupon->category_name }}</td>                                                                
                                     <td class="text-center">
                                         <div class="btn-group" role="group" aria-label="Second group">
                                             <a href="{{ route('admin.coupon.edit', $coupon->id) }}" class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></a>

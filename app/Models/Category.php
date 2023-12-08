@@ -13,12 +13,8 @@ class Category extends Model
 
     protected $table = 'categories';
 
-    protected $fillable = ['name','description','image'];
+    protected $fillable = ['name','description','image','shortcode'];
 
     protected $dates = ['deleted_at'];
 
-    public function products()
-	{
-	    return $this->belongsToMany(Products::class, 'product_categories', 'category_id', 'product_id');
-	}
 }

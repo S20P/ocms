@@ -31,6 +31,7 @@ class CategoryController extends Controller
     	$categories = new Category;
        
     	$categories->name = $input['name'];
+		$categories->shortcode = $input['shortcode'];
 		$categories->description = $input['description'];
 
 		if($request->file('image')){
@@ -78,6 +79,7 @@ class CategoryController extends Controller
     	$categories = Category::find($input['id']);
        
     	$categories->name = $input['name'];
+		$categories->shortcode = $input['shortcode'];
 		$categories->description = $input['description'];
 
 		if($request->file('image')){

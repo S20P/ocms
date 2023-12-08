@@ -15,7 +15,7 @@ class CouponsController extends Controller
     public function index()
 	{
 
-		$categories = Category::select('id','name')->get();
+		$categories = Category::select('id','name','shortcode')->get();
 	    $coupons = Coupon::orderBy('id','desc')->paginate(10);
 	   
 	    return view('admin.pages.coupon.index', compact('coupons','categories'));
@@ -23,7 +23,7 @@ class CouponsController extends Controller
 
 	public function create()
 	{	  
-		$categories = Category::select('id','name')->get(); 
+		$categories = Category::select('id','name','shortcode')->get(); 
 	    return view('admin.pages.coupon.create',["categories" => $categories]);
 	}
 
@@ -58,7 +58,7 @@ class CouponsController extends Controller
 	{
 		try{
 		    $coupon = Coupon::where('id',$id)->first();  
-			$categories = Category::select('id','name')->get();
+			$categories = Category::select('id','name','shortcode')->get();
 
 		    return view('admin.pages.coupon.edit', compact('coupon','categories'));
 

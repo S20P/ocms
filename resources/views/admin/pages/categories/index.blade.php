@@ -23,7 +23,8 @@
                                     <table  class="table">
                                         <thead>
                                         <tr>
-                                            <th> Image </th>                        
+                                            <th> Image </th>  
+                                            <th> Short Code </th>                          
                                             <th> Name </th>                                           
                                             <th style="width:100px; min-width:100px;" class="text-center text-danger"><i class="fa fa-bolt"> </i></th>
                                         </tr>
@@ -36,8 +37,8 @@
                   <img src="{{ asset('images/category/'.$category->image) }}" style="height: 100px; width: 100px;">
                                     @endif
                                     </td>                               
+                                                    <td>{{ $category->shortcode }}</td>
                                                     <td>{{ $category->name }}</td>
-                                     
 
                                                     <td class="text-center">
                                                         <div class="btn-group" role="group" aria-label="Second group">

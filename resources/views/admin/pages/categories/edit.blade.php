@@ -40,6 +40,21 @@
                                         <i class="fa fa-exclamation-circle fa-fw"></i> @error('name') <span>{{ $message }}</span> @enderror
                                     </div>
                                 </div>
+
+                                <div class="form-group col-md-12 mb-3">
+                                    <label class="control-label" for="shortcode">Short Code</label>
+                                    <input
+                                        class="form-control @error('shortcode') is-invalid @enderror"
+                                        type="text"
+                                        placeholder="Enter shortcode"
+                                        id="shortcode"
+                                        name="shortcode"
+                                        value="{{ old('shortcode', $category->shortcode) }}"
+                                    />
+                                    <div class="invalid-feedback active">
+                                        <i class="fa fa-exclamation-circle fa-fw"></i> @error('shortcode') <span>{{ $message }}</span> @enderror
+                                    </div>
+                                </div>
                              
                                
                                 <div class="form-group mb-3">

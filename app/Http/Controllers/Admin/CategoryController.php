@@ -44,7 +44,7 @@ class CategoryController extends Controller
 		$categories->save();      
         
          return redirect()->route('admin.categories.index')
-->with('success','Category has been created successfully.');
+->with('success','Brand has been created successfully.');
 
         }catch(Exception $e){
          	return response()->json([
@@ -92,7 +92,7 @@ class CategoryController extends Controller
 		$categories->save(); 
 
      return redirect()->route('admin.categories.index')
-		->with('success','Category has been updated successfully');
+		->with('success','Brand has been updated successfully');
 	   
 	}
 
@@ -104,6 +104,6 @@ class CategoryController extends Controller
         $category->delete();
 
 		return redirect()->route('admin.categories.index')
-		->with('success','Category has been deleted successfully');
+		->with('success','Brand has been deleted successfully');
 	}
 }

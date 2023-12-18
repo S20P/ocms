@@ -37,6 +37,7 @@ Route::group(['middleware' => 'adminauth'], function () {
 		Route::post('/update', [CouponsController::class,'update'])->name('admin.coupon.update');
 		Route::get('/delete/{id}', [CouponsController::class,'destroy'])->name('admin.coupon.delete');
 		Route::post('/import-excel', [CouponsController::class,'import'])->name('admin.coupon.import');
+		Route::post('/delete-all', [CouponsController::class,'deleteAll'])->name('admin.coupon.deleteAll');
       });
     //@end::coupon
 

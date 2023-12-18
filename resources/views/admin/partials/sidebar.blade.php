@@ -13,7 +13,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('admin.categories.index')}}">
          <i class="bi bi-tags-fill"></i>
-          <span>Categories</span>
+          <span>Brands</span>
         </a>
       </li>
       

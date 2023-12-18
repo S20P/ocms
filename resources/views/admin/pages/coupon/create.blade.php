@@ -56,7 +56,7 @@
                                 </div>
 
                                 <div class="form-group mb-3">
-                                    <label class="control-label" for="categories">Categories</label>
+                                    <label class="control-label" for="categories">Brands</label>
                                     <select name="category_name" id="categories" class="form-select">
                                         @foreach($categories as $category)
                                             <option value="{{ $category->shortcode }}">{{ $category->name }}</option>

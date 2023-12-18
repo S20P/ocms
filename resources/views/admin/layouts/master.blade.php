@@ -8,7 +8,8 @@
   <title>{{ config('app.name', 'Laravel') }}</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
- 
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
    @include('admin.partials.head')
 
 </head>

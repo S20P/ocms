@@ -27,7 +27,7 @@
                             <input type="file" name="file" id="file" class="form-control">
                         </div>
                         <div class="form-group mb-3">
-                            <label class="control-label" for="categories">Categories</label>
+                            <label class="control-label" for="categories">Brands</label>
                             <select name="category_name" id="categories" class="form-select" required>
                                 @foreach($categories as $category)
                                     <option value="{{ $category->shortcode }}">{{ $category->name."-(".$category->shortcode.")" }}</option>
@@ -44,13 +44,10 @@
            <div class="card">
             <div class="card-body">
                <div class="d-flex card-header-flex">
-                 <h5 class="card-title flex">Coupons</h5> 
-                 
-               
-
-
-                  <a href="{{ route('admin.coupon.create') }}" class="btn btn-primary flex">Add Coupon</a>
+                 <h5 class="card-title flex">Coupons</h5>                 
+                 <a href="{{ route('admin.coupon.create') }}" class="btn btn-primary flex">Add Coupon</a>
                      </div>
+                     <button class="btn btn-danger mb-3" id="deleteCouponsAllBtn">Delete All</button>
                         <div class="row">
                             <div class="col-md-12">
                  
@@ -60,11 +57,12 @@
                             <th scope="col"> Coupon Code </th>                                            
                             <th scope="col"> Amount </th>  
                             <th scope="col"> Status </th>  
-                            <th scope="col"> Category </th>  
+                            <th scope="col"> Brand </th>  
                             <th scope="col" style="width:100px; min-width:100px;" class="text-center text-danger"><i class="fa fa-bolt"> </i></th>
                         </tr>
                         </thead>
                         <tbody>
+                        
                             @foreach($coupons as $coupon)
                                 <tr>
                                     <td>{{ $coupon->coupon_code }}</td> 
@@ -81,7 +79,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {!! $coupons->links() !!}
+                   
                     </div>
                     </div>
               

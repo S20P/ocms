@@ -1,11 +1,11 @@
 @extends('admin.layouts.master')
 @section('content')
    <div class="pagetitle">
-      <h1>Categories </h1>
+      <h1>Brands </h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
-           <li class="breadcrumb-item"><a href="{{route('admin.categories.index')}}">Categories</a></li>
+           <li class="breadcrumb-item"><a href="{{route('admin.categories.index')}}">Brands</a></li>
           <li class="breadcrumb-item active">edit</li>
         </ol>
       </nav>
@@ -15,7 +15,7 @@
 
      <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Category Information</h5>
+              <h5 class="card-title">Brand Information</h5>
 
               <!-- Vertical Form -->
                        
@@ -31,7 +31,7 @@
                                     <input
                                         class="form-control @error('name') is-invalid @enderror"
                                         type="text"
-                                        placeholder="Enter category name"
+                                        placeholder="Enter Brand name"
                                         id="name"
                                         name="name"
                                         value="{{ old('name', $category->name) }}"

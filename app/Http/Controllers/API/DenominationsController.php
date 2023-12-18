@@ -30,7 +30,7 @@ class DenominationsController extends Controller
 			'name' => 'required|max:255',
             'email' => 'required|max:255', 
             'amount' => 'required',
-            'category_name' => 'required',			
+            'brand_name' => 'required',			
         ]);
 
 		if($validator->fails()){
@@ -44,7 +44,7 @@ class DenominationsController extends Controller
 
 		$coupon_find = Coupon::select("id","coupon_code")->where("status",0)
 		                        ->where("amount",$input['amount'])
-								->where("category_name",$input['category_name'])
+								->where("category_name",$input['brand_name'])
 								->orderBy("id","desc")->first();
         if($coupon_find){
 			$coupon_code = $coupon_find->coupon_code;
@@ -60,7 +60,7 @@ class DenominationsController extends Controller
 
 			$denomination->coupon_code = $this->formatCreditCardNumber($coupon_code);
 			$data = $denomination;
-			$data["category_name"] = $input['category_name'];
+			$data["brand_name"] = $input['brand_name'];
 			 	
 
 			return response()->json([

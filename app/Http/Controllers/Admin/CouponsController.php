@@ -16,7 +16,7 @@ class CouponsController extends Controller
 	{
 
 		$categories = Category::select('id','name','shortcode')->get();
-	    $coupons = Coupon::orderBy('id','desc')->paginate(10);
+	    $coupons = Coupon::orderBy('id','desc')->get();
 	   
 	    return view('admin.pages.coupon.index', compact('coupons','categories'));
 	}
@@ -97,6 +97,17 @@ class CouponsController extends Controller
 
 		return redirect()->route('admin.coupon.index')
 		->with('success','Coupon has been deleted successfully');
+	}
+
+
+	public function deleteAll(Request $request)
+	{
+		
+		 // delete
+         Coupon::truncate();    
+
+		return redirect()->route('admin.coupon.index')
+		->with('success','Coupons has been deleted successfully');
 	}
 
 

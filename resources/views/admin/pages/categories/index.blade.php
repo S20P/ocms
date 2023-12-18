@@ -1,11 +1,11 @@
 @extends('admin.layouts.master')
 @section('content')
    <div class="pagetitle">
-      <h1>Categories </h1>
+      <h1>Brands </h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
-           <li class="breadcrumb-item"><a href="{{route('admin.categories.index')}}">Categories</a></li>
+           <li class="breadcrumb-item"><a href="{{route('admin.categories.index')}}">Brands</a></li>
           <li class="breadcrumb-item active">list</li>
         </ol>
       </nav>
@@ -14,8 +14,8 @@
        <div class="card">
             <div class="card-body">
                  <div class="d-flex card-header-flex">
-                 <h5 class="card-title flex">Categories</h5>                 
-                 <a href="{{ route('admin.categories.create') }}" class="btn btn-primary flex">Add category</a>
+                 <h5 class="card-title flex">Brands</h5>                 
+                 <a href="{{ route('admin.categories.create') }}" class="btn btn-primary flex">Add Brand</a>
                 </div>
                        <div class="row">
                         <div class="col-md-12">         
